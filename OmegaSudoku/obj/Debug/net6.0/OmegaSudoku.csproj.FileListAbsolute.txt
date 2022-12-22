@@ -1,0 +1,15 @@
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\obj\Debug\net6.0\OmegaSudoku.csproj.AssemblyReference.cache
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\obj\Debug\net6.0\OmegaSudoku.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\obj\Debug\net6.0\OmegaSudoku.AssemblyInfoInputs.cache
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\obj\Debug\net6.0\OmegaSudoku.AssemblyInfo.cs
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\obj\Debug\net6.0\OmegaSudoku.csproj.CoreCompileInputs.cache
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\bin\Debug\net6.0\OmegaSudoku.exe
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\bin\Debug\net6.0\OmegaSudoku.deps.json
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\bin\Debug\net6.0\OmegaSudoku.runtimeconfig.json
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\bin\Debug\net6.0\OmegaSudoku.dll
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\bin\Debug\net6.0\OmegaSudoku.pdb
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\obj\Debug\net6.0\OmegaSudoku.dll
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\obj\Debug\net6.0\refint\OmegaSudoku.dll
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\obj\Debug\net6.0\OmegaSudoku.pdb
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\obj\Debug\net6.0\OmegaSudoku.genruntimeconfig.cache
+C:\Users\Arad\source\repos\AradArbel\OmegaSudoku\OmegaSudoku\obj\Debug\net6.0\ref\OmegaSudoku.dll

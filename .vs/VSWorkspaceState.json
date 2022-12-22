@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\OmegaSudoku"
   ],
+  "SelectedNode": "\\OmegaSudoku\\Cell.cs",
   "PreviewInSolutionExplorer": false
 }
