@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 {
-    static const int maxCellValue = 9;
-    static const int minCellValue = 1;
+    public const int maxCellValue = 9;
+    public const int minCellValue = 1;
 
     // Representation of a cell in a Sudoku board 
     class SudokuCell
@@ -76,7 +76,7 @@ using System.Text;
                 {
                     return 0;
                 }
-                return this.numPossibilities;
+                return this.possibilitiesAmount;
             }
         }
 
