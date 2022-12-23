@@ -24,13 +24,16 @@ using System.Text;
         // Number of possible values for this cell.
         private int possibilitiesAmount;
 
+        // Number of Bit mask with the possible values for this cell.
+        private Dictionary<int, bool> possibilities;
+
         //Constructor for this class.
         internal SudokuCell(int row, int col)
         {
             this.row = row;
             this.col = col;
             this.value = 0;
-            this.possibilities = new BitArray(new int[] { 0x01ff });
+            this.possibilities = new Dictionary<int, bool>();
             this.possibilitiesAmount = maxCellValue;
         }
 
@@ -38,9 +41,9 @@ using System.Text;
         public int Row
         {
             get{return this.row;}
-        }
+        } 
 
-        // Get column for this cell into a Sudoku board (zero-based).
+        // Get column for this cell into a Sudoku board.
         public int Col
         {
             get{return this.col;}
@@ -89,7 +92,7 @@ using System.Text;
 
             for (int i = 0; i < maxCellValue; i++)
             {
-                if (this.possibilities.Get(i))
+                if (this.possibilities.ContainsKey(i))
                 {
                     possibilities.Add(i + 1);
                 }
@@ -113,13 +116,13 @@ using System.Text;
             return possibilities[index];
         }
 
-        // Removes a value from the bitArray of possible values.
+        // Removes a value from the dictionary of possible values.
         internal void RemovePossibility(int value)
         {
             this.CheckValue(value);
-            if (this.possibilities.Get(value - 1))
+            if (this.possibilities.ContainsKey(value - 1))
             {
-                this.possibilities.Set(value - 1, false);
+                this.possibilities.Add(value - 1, false);
                 this.possibilitiesAmount--;
             }
         }
