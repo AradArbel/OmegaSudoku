@@ -3,9 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 {
-    public const int maxCellValue = 9;
-    public const int minCellValue = 1;
-
     // Representation of a cell in a Sudoku board 
     class SudokuCell
     { 
@@ -24,7 +21,7 @@ using System.Text;
         // Number of possible values for this cell.
         private int possibilitiesAmount;
 
-        // Number of Bit mask with the possible values for this cell.
+        // Dictionary to know for each value if it can be put int the cell or not.
         private Dictionary<int, bool> possibilities;
 
         //Constructor for this class.
@@ -34,7 +31,7 @@ using System.Text;
             this.col = col;
             this.value = 0;
             this.possibilities = new Dictionary<int, bool>();
-            this.possibilitiesAmount = maxCellValue;
+            this.possibilitiesAmount = Constants.maxCellValue;
         }
 
         // Get row for this cell into a Sudoku board.
@@ -64,12 +61,12 @@ using System.Text;
         // Has this cell a valid value?
         public bool IsValid
         {
-            get { return (this.value >= minCellValue && this.value <=  maxCellValue);}
+            get { return (this.value >= Constants.minCellValue && this.value <= Constants.maxCellValue);}
         }
 
         // Number of possible values for this cell.
-        public int NumPossibilities
-        {
+        public int possibilitiesAmount
+    {
             get
             {
                 if (this.IsValid)
@@ -80,7 +77,7 @@ using System.Text;
             }
         }
 
-        //  Return an Int array with the possible values for this cell.
+        //  Return an array with the possible values for this cell.
         public int[] GetPossibilities()
         {
             if (this.IsValid)
@@ -89,15 +86,15 @@ using System.Text;
             }
 
             List<int> possibilities = new List<int>();
-
-            for (int i = 0; i < maxCellValue; i++)
+            
+            /// add each possible value in the dictionary to the array
+            for (int i = 1; i <= Constants.maxCellValue; i++)
             {
-                if (this.possibilities.ContainsKey(i))
+                if (this.possibilities.item[i] == true)
                 {
-                    possibilities.Add(i + 1);
+                    possibilities.Add(i);
                 }
             }
-
             return possibilities.ToArray();
         }
 
@@ -119,10 +116,10 @@ using System.Text;
         // Removes a value from the dictionary of possible values.
         internal void RemovePossibility(int value)
         {
-            this.CheckValue(value);
-            if (this.possibilities.ContainsKey(value - 1))
+            this.IsVaildValue(value);
+            if (this.possibilities.ContainsKey(value))
             {
-                this.possibilities.Add(value - 1, false);
+                this.possibilities.Add(value, false);
                 this.possibilitiesAmount--;
             }
         }
@@ -138,24 +135,22 @@ using System.Text;
                     this.row + 1, this.col + 1));
             }
 
-            this.CheckValue(value);
+            this.IsVaildValue(value);
+            this.value = value;
+        }
 
-            int[] possibilities = this.GetPossibilities();
-
-            if (Array.IndexOf<int>(possibilities, value) == -1)
+        // Checks if the specified value is valid for a cell.
+        private void IsVaildValue(int value)
+        {
+            if (value < Constants.minCellValue || value > Constants.maxCellValue)
             {
                 throw new ApplicationException(
                     string.Format("Invalid value {2} for cell at [{0}, {1}].",
                     this.row + 1, this.col + 1, value));
             }
+            int[] possibilities = this.GetPossibilities();
 
-            this.value = value;
-        }
-
-        // Checks if the specified value is valid for a cell.
-        private void CheckValue(int value)
-        {
-            if (value < minCellValue || value > maxCellValue)
+            if (Array.IndexOf<int>(possibilities, value) == -1)
             {
                 throw new ApplicationException(
                     string.Format("Invalid value {2} for cell at [{0}, {1}].",
